@@ -27,4 +27,12 @@ class osx::global::tap_to_click {
     host   => 'currentHost',
     user   => $::boxen_user;
   }
+
+  boxen::osx_defaults { 'Tap-to-Click new trackpad':
+    domain => 'com.apple.AppleMultitouchTrackpad',
+    key    => 'Clicking',
+    value  => 1,
+    type   => int,
+    user   => $::boxen_user
+  }
 }
