@@ -8,8 +8,7 @@ class osx::sound::volume_change_feedback (
     default => 1
   }
 
-  boxen::osx_defaults { 'Enable feedback on volume change':
-    user   => $::boxen_user,
+  osx_default { 'Enable feedback on volume change':
     domain => 'NSGlobalDomain',
     key    => 'com.apple.sound.beep.feedback',
     value  => $value,

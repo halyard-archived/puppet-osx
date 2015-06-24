@@ -29,6 +29,6 @@ Puppet::Type.newtype(:osx_default) do
 
   newparam(:type) do
     desc 'Type for key'
-    newvalues(:bool, :int, :dict, :string)
+    newvalues(:boolean, :integer, :dict, :string)
   end
 end
