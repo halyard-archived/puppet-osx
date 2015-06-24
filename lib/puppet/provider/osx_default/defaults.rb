@@ -1,5 +1,6 @@
 require 'puppet/util/errors'
 require 'puppet/util/execution'
+require 'set'
 
 Puppet::Type.type(:osx_default).provide :defaults do
   include Puppet::Util::Execution
@@ -69,13 +70,25 @@ Puppet::Type.type(:osx_default).provide :defaults do
     "#{domain} #{key}"
   end
 
+  def values_as_hash
+    Hash[value.map { |x| x.values_at(0, 2).map(&:to_s) }]
+  end
+
+  def current_dict
+    raw = read.split("\n")[1...-1].map { |l| l.split(nil, 3).values_at(0, 2) }
+    Hash[raw.map { |k, v| [k, clean_dict_value(v)] }]
+  end
+
+  def clean_dict_value(v)
+    v.match(/^"?(.*[^"])"?;/)[1]
+  end
+
   def generic_exists?
     read == value.to_s && read_type == type
   end
 
   def dict_exists?
-    return false unless read_type == 'dict'
-    false
+    read_type == 'dictionary' && current_dict == values_as_hash
   end
 
   def generic_value_string
@@ -83,6 +96,6 @@ Puppet::Type.type(:osx_default).provide :defaults do
   end
 
   def dict_value_string
-    '-dict ' + value.map { |k, t, v| "#{k} -#{t} '#{v}'" }.join(' ')
+    '-dictionary ' + value.map { |k, t, v| "#{k} -#{t} '#{v}'" }.join(' ')
   end
 end
