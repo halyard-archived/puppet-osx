@@ -14,7 +14,6 @@ Puppet::Type.type(:osx_default).provide :defaults do
   end
 
   def create
-    puts "#{key_string} #{type_call(:value_string)}"
     run :write, "#{key_string} #{type_call(:value_string)}"
   end
 
@@ -22,7 +21,7 @@ Puppet::Type.type(:osx_default).provide :defaults do
 
   def type_call(call)
     type_sym = "#{type}_#{call}".to_sym
-    return send(type_sym) if respond_to? type_sym
+    return send(type_sym) if respond_to?(type_sym, true)
     send "generic_#{call}".to_sym
   end
 
@@ -38,14 +37,10 @@ Puppet::Type.type(:osx_default).provide :defaults do
     run(:'read-type', key_string).split.last
   end
 
-  def generic_exists?
-    read == value && read_type == type
-  end
-
   def host
     return @host if @host
     @host = case @resource[:host]
-            when /^current|currentHost$/
+            when /^(current|currentHost)$/
               '-currentHost'
             when nil
               ''
@@ -63,7 +58,7 @@ Puppet::Type.type(:osx_default).provide :defaults do
   end
 
   def value
-    @value ||= @resource[:value].to_s
+    @value ||= @resource[:value]
   end
 
   def type
@@ -74,7 +69,20 @@ Puppet::Type.type(:osx_default).provide :defaults do
     "#{domain} #{key}"
   end
 
+  def generic_exists?
+    read == value.to_s && read_type == type
+  end
+
+  def dict_exists?
+    return false unless read_type == 'dict'
+    false
+  end
+
   def generic_value_string
     "-#{type} #{value}"
+  end
+
+  def dict_value_string
+    '-dict ' + value.map { |k, t, v| "#{k} -#{t} '#{v}'" }.join(' ')
   end
 end

@@ -8,9 +8,9 @@ class osx::screensaver::set (
     domain => 'com.apple.screensaver',
     key    => 'moduleDict',
     value  => [
-        ['moduleName', '-string', $screensaver],
-        ['path', '-string', $path],
-        ['type', '-int', 0]
+        ['moduleName', 'string', $screensaver],
+        ['path', 'string', $path],
+        ['type', 'integer', 0]
     ],
     type   => 'dict',
   }
