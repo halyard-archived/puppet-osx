@@ -26,16 +26,20 @@ Puppet::Type.type(:osx_default).provide :defaults do
     send "generic_#{call}".to_sym
   end
 
-  def run(cmd, string)
-    `defaults #{host} #{cmd} #{string} 2>/dev/null`
+  def run(cmd, string, failonfail=true)
+    execute(
+      "defaults #{host} #{cmd} #{string}",
+      failonfail: failonfail,
+      uid: user
+    )
   end
 
   def read
-    run(:read, key_string).rstrip
+    run(:read, key_string, false).rstrip
   end
 
   def read_type
-    run(:'read-type', key_string).split.last
+    run(:'read-type', key_string, false).split.last
   end
 
   def host
@@ -48,6 +52,10 @@ Puppet::Type.type(:osx_default).provide :defaults do
             else
               "-host #{@resource[:host]}"
             end
+  end
+
+  def user
+    @user ||= @resource[:user] || Facter.value(:boxen_user)
   end
 
   def domain
@@ -96,6 +104,6 @@ Puppet::Type.type(:osx_default).provide :defaults do
   end
 
   def dict_value_string
-    '-dictionary ' + value.map { |k, t, v| "#{k} -#{t} '#{v}'" }.join(' ')
+    '-dict ' + value.map { |k, t, v| "#{k} -#{t} '#{v}'" }.join(' ')
   end
 end

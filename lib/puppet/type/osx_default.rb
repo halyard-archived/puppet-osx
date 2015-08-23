@@ -15,6 +15,10 @@ Puppet::Type.newtype(:osx_default) do
     newvalues(nil, 'currentHost')
   end
 
+  newparam(:user) do
+    desc 'User to set value for'
+  end
+
   newparam(:domain) do
     desc 'Domain to operate on'
   end
