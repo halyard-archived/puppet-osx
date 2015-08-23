@@ -2,7 +2,6 @@ class osx::screensaver::set (
   $screensaver = undef,
   $path        = undef
 ) {
-  $value = "moduleName -string 'Hyperspace' path -string '/Users/$::boxen_user/Library/Screen Savers/Hyperspace.saver' type -int 0"
   osx_default { 'Set screensaver':
     host   => 'currentHost',
     domain => 'com.apple.screensaver',
