@@ -1,21 +1,25 @@
-# OSX Defaults Module for Puppet
+puppet-osx
+===========
 
-[![Build Status](https://travis-ci.org/boxen/puppet-osx.svg?branch=master)](https://travis-ci.org/boxen/puppet-osx)
+[![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://tldrlegal.com/license/mit-license)
+[![Build Status](https://img.shields.io/circleci/project/halyard/puppet-osx.svg)](https://circleci.com/gh/halyard/puppet-osx)
 
-Provides classes for setting various defaults in Mac OS X. Also provides a means
-to set a "recovery message" to be displayed on the login and lock screens.
+Provides classes for setting various defaults in Mac OS X.
 
-## Recovery Message Usage
+## Changes from upstream
+
+* Removed a lot of meta-stuff I wasn't using, like the cardboard scripts
+* Set up CircleCI build tests
+
+## Usage
+
+### Recovery Message Usage
 
 Displays the given message on the lock and login screens.
 
 ```puppet
 osx::recovery_message { 'If this Mac is found, please call 123-456-7890': }
 ```
-
-## One-Shot Settings
-
-Just `include` any of these in your manifest.
 
 ### Global Settings
 
@@ -77,7 +81,7 @@ Just `include` any of these in your manifest.
 * `osx::software_update` - download and install software updates
 * `osx::keyboard::capslock_to_control` - remaps capslock to control on attached keyboards
 
-## Customizable Settings
+### Customizable Settings
 
 These settings can be used like one-shots or customized.
 
@@ -256,11 +260,5 @@ class { 'osx::dock::magnification':
 
 ## Required Puppet Modules
 
-* boxen
-* puppetlabs-stdlib
+* [boxen](https://github.com/halyard/puppet-boxen)
 
-## Developing
-
-Write code.
-
-Run `script/cibuild`.
