@@ -3,9 +3,9 @@ require 'puppet_blacksmith/rake_tasks'
 require 'puppet-lint/tasks/puppet-lint'
 require 'puppet-syntax/tasks/puppet-syntax'
 
-PuppetLint.configuration.relative = true
-PuppetLint.configuration.fail_on_warnings = true
-PuppetLint.configuration.with_filename = true
+PuppetLint::RakeTask.new(:lint) do |config|
+  config.fail_on_warnings = true
+end
 
 desc 'Run syntax and lint checks'
 task test: [
