@@ -2,7 +2,9 @@
 #
 # Parameters
 #
-#  The available actions are: ['Mission Control'|'Application Windows'|'Desktop'|'Start Screen Saver'|'Disable Screen Saver'|'Dashboard'|'Put Display to Sleep'|'Launchpad'|'Notification Center']
+#  The available actions are: ['Mission Control'|'Application Windows'|
+#     'Desktop'|'Start Screen Saver'|'Disable Screen Saver'|'Dashboard'|
+#     'Put Display to Sleep'|'Launchpad'|'Notification Center']
 #
 #  top_left: Action for the top left corner
 #  top_right: Action for the top right corner

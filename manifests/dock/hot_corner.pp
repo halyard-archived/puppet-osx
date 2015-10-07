@@ -3,7 +3,9 @@
 # Parameters
 #
 #  action: Action of the hot corner
-#    ['Mission Control'|'Application Windows'|'Desktop'|'Start Screen Saver'|'Disable Screen Saver'|'Dashboard'|'Put Display to Sleep'|'Launchpad'|'Notification Center']
+#    ['Mission Control'|'Application Windows'|'Desktop'|'Start Screen Saver'|
+#     'Disable Screen Saver'|'Dashboard'|'Put Display to Sleep'|'Launchpad'|
+#     'Notification Center']
 #
 #  position: Position of the hot corner (default value: $name)
 #    ['Top Left'|'Top Right'|'Bottom Left'|'Bottom Right']
@@ -25,8 +27,21 @@ define osx::dock::hot_corner (
 ) {
   include osx::dock
 
-  validate_re($position, ['Top Left', 'Top Right', 'Bottom Left', 'Bottom Right'])
-  validate_re($action, ['Mission Control', 'Application Windows', 'Desktop', 'Start Screen Saver', 'Disable Screen Saver', 'Dashboard', 'Put Display to Sleep', 'Launchpad', 'Notification Center'])
+  validate_re($position, [
+    'Top Left',
+    'Top Right',
+    'Bottom Left',
+    'Bottom Right'])
+  validate_re($action, [
+    'Mission Control',
+    'Application Windows',
+    'Desktop',
+    'Start Screen Saver',
+    'Disable Screen Saver',
+    'Dashboard',
+    'Put Display to Sleep',
+    'Launchpad',
+    'Notification Center'])
 
   $position_value = $position ? {
     'Top Left' => 'tl',

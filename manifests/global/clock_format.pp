@@ -1,3 +1,4 @@
+# Set clock format for menu bar
 class osx::global::clock_format(
   $format = 'EEE MMM d  H:mm:ss'
 ) {

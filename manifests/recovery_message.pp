@@ -8,7 +8,8 @@ define osx::recovery_message(
   $value  = $name,
 ) {
   $kextdir     = '/System/Library/Extensions'
-  $eficachedir = '/System/Library/Caches/com.apple.corestorage/EFILoginLocalizations'
+  $eficachedir =
+  '/System/Library/Caches/com.apple.corestorage/EFILoginLocalizations'
 
   # The recovery message cannot contain an apostrophe (') because we're passing
   # it into a single-quoted exec. If it does contain an apostrophe, fail and
@@ -54,7 +55,7 @@ define osx::recovery_message(
 
       exec { 'Set OS X Recovery Message NVRAM Variable':
         command => "nvram good-samaritan-message='${value}'",
-        unless  => "nvram good-samaritan-message | cut -c24- | grep '^${value}$'",
+        unless  => "nvram good-samaritan-message |cut -c24- |grep '^${value}$'",
         user    => root
       }
     } else {

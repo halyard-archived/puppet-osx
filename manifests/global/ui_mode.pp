@@ -1,3 +1,4 @@
+# Enable dark-mode in the UI
 class osx::global::ui_mode (
   $mode = 'Dark'
 ) {

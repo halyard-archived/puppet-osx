@@ -1,4 +1,5 @@
-# Public: Enable/disable smart zoom for multitouch mice (default = disabled). Requires re-login.
+# Public: Enable/disable smart zoom for multitouch mice
+# (default = disabled). Requires re-login.
 class osx::mouse::smart_zoom($enabled = false) {
   $value = $enabled ? {
     false => 0,

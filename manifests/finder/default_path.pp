@@ -1,3 +1,16 @@
+# Public: Sets default path for new finder windows
+#
+# Examples
+#
+#   # Set default path to ~/
+#   include osx::finder::default_path
+#
+#   # Or pick the location yourself
+#   class { 'osx::finder::default_path':
+#     path => '/your/path/here'
+#   }
+#
+
 class osx::finder::default_path(
   $path = "file:///Users/${::boxen_user}"
 ) {

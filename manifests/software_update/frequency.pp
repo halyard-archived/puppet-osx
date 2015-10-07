@@ -1,3 +1,4 @@
+# Set frequency in days for software update checks
 class osx::software_update::frequency (
   $frequency = 1
 ) {

@@ -1,3 +1,4 @@
+# Set path and name for screensaver
 class osx::screensaver::set (
   $screensaver = undef,
   $path        = undef

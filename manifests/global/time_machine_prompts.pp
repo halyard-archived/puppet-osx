@@ -1,3 +1,4 @@
+# Disable time machine prompts for new drives
 class osx::global::time_machine_prompts(
   $enable = false
 ) {

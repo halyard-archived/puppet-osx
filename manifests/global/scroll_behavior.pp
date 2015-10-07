@@ -1,3 +1,4 @@
+# Set scroll bar behavior
 class osx::global::scroll_behavior (
   $mode = 1
 ) {

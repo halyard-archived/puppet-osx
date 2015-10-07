@@ -1,4 +1,5 @@
-# Public: Enable one or two button mode for multitouch mice (default = 1). Requires re-login.
+# Public: Enable one or two button mode for multitouch mice
+# (default = 1). Requires re-login.
 class osx::mouse::button_mode($mode = 1) {
   $value = $mode ? {
     1 => 'OneButton',

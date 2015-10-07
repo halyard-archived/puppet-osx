@@ -1,3 +1,4 @@
+# Set start delay in seconds for screensaver
 class osx::screensaver::start_delay(
   $delay = 300
 ) {

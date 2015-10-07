@@ -1,3 +1,4 @@
+# Set view style for finder windows
 class osx::finder::view_style(
   $style = 'Nlsv'
 ) {

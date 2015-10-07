@@ -1,3 +1,4 @@
+# Enable OSX system firewall
 class osx::security::firewall (
   $enabled = 1
 ) {
