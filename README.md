@@ -1,7 +1,8 @@
 puppet-osx
 ===========
 
-[![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://tldrlegal.com/license/mit-license)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/halyard/osx.svg)](https://forge.puppetlabs.com/halyard/osx)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://tldrlegal.com/license/mit-license)
 [![Build Status](https://img.shields.io/circleci/project/halyard/puppet-osx.svg)](https://circleci.com/gh/halyard/puppet-osx)
 
 Provides classes for setting various defaults in Mac OS X.
