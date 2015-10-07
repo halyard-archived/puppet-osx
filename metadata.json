@@ -1,0 +1,19 @@
+{
+  "name": "halyard-osx",
+  "version": "0.0.9",
+  "author": "Les Aker",
+  "license": "MIT",
+  "summary": "Configure OSX via Boxen",
+  "source": "https://github.com/halyard/puppet-osx",
+  "project_page": "https://github.com/halyard/puppet-osx",
+  "issues_url": "https://github.com/halyard/puppet-osx/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Darwin",
+      "operatingsystemmajrelease": ["14", "15"]
+    }
+  ]
+}

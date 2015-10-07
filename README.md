@@ -10,22 +10,22 @@ Provides classes for setting various defaults in Mac OS X.
 
 * Removed a lot of meta-stuff I wasn't using, like the cardboard scripts
 * Set up CircleCI build tests
-* Add a better osx_default type for handling dicts
-* Add osx::finder::default_path to set default finder window path
-* Add osx::finder::sidebar_icon_size to set finder sidebar icons
-* add osx::finder::view_style to handle default view
-* add osx::global::clock_format
-* add osx::global::disable_smart_quotes
-* add osx::global::scroll_behavior
-* add osx::global::time_machine_prompts
-* add osx::global::ui_mode
-* add osx::keyboard::dim_backlight
-* add osx::mouse::trackpad_speed
-* add osx::screensaver::set
-* add osx::screensaver::start_delay
-* add osx::security::firewall
-* add osx::software_update::frequency
-* add osx::sound::volume_change_feedback
+* Add a better osx\_default type for handling dicts
+* Add `osx::finder::default_path` to set default finder window path
+* Add `osx::finder::sidebar_icon_size` to set finder sidebar icons
+* add `osx::finder::view_style` to handle default view
+* add `osx::global::clock_format`
+* add `osx::global::disable_smart_quotes`
+* add `osx::global::scroll_behavior`
+* add `osx::global::time_machine_prompts`
+* add `osx::global::ui_mode`
+* add `osx::keyboard::dim_backlight`
+* add `osx::mouse::trackpad_speed`
+* add `osx::screensaver::set`
+* add `osx::screensaver::start_delay`
+* add `osx::security::firewall`
+* add `osx::software_update::frequency`
+* add `osx::sound::volume_change_feedback`
 
 ## Usage
 
