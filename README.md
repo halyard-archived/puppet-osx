@@ -26,6 +26,7 @@ Provides classes for setting various defaults in Mac OS X.
 * add `osx::security::firewall`
 * add `osx::software_update::frequency`
 * add `osx::sound::volume_change_feedback`
+* renamed `osx::dock::2d` to `osx::dock::twod` for Puppet 4 compat
 
 ## Usage
 
@@ -53,7 +54,7 @@ osx::recovery_message { 'If this Mac is found, please call 123-456-7890': }
 
 ### Dock Settings
 
-* `osx::dock::2d` - use the old flat dock style
+* `osx::dock::twod` - use the old flat dock style (renamed from 2d to match Puppet 4 rules)
 * `osx::dock::autohide` - automatically hide the dock
 * `osx::dock::clear_dock` - ensures the dock only contains apps that are running
 * `osx::dock::disable` - disable the dock by setting a long autohide-delay

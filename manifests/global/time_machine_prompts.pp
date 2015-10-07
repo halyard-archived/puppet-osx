@@ -1,7 +1,7 @@
 class osx::global::time_machine_prompts(
   $enable = false
 ) {
-  $value = $enabled ? {
+  $value = $enable ? {
     true => false,
     default  => true
   }
