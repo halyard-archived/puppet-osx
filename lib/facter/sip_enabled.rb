@@ -7,7 +7,7 @@ Facter.add('sip_enabled') do
 
   def sip_enabled?
     return false unless File.exist? csrutil
-    case `#{csrutil}`.split.last
+    case `#{csrutil} status 2>&1`.split.last
     when 'enabled.'
       true
     when 'disabled.'
