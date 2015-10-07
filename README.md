@@ -27,6 +27,7 @@ Provides classes for setting various defaults in Mac OS X.
 * add `osx::software_update::frequency`
 * add `osx::sound::volume_change_feedback`
 * renamed `osx::dock::2d` to `osx::dock::twod` for Puppet 4 compat
+* add `sip_enabled` fact for checking Rootless on 10.11
 
 ## Usage
 
