@@ -1,6 +1,6 @@
 # Public: Manages battery chime
 class osx::sound::battery_chime (
-  $enable = true
+  $enable = false
 ) {
 
   $value = $enable ? {
