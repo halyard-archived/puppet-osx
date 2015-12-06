@@ -1,14 +1,11 @@
 # Public: Install updates from Apple
 class osx::software_update {
-  exec {
-    'OSX Software Update':
-      command  => 'softwareupdate -i -a',
-      schedule => 'update_schedule',
-      timeout  => 0,
-      user     => 'root'
-  }
+  $update_msg = 'Software Update found the following'
 
-  schedule { 'update_schedule':
-    period => 'weekly'
+  exec { 'OSX Software Update':
+      command => 'softwareupdate -i -a',
+      timeout => 0,
+      user    => 'root',
+      onlyif  => "softwareupdate -l --no-scan | grep '${update_msg}'"
   }
 }
