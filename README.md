@@ -31,6 +31,7 @@ Provides classes for setting various defaults in Mac OS X.
 * renamed `osx::dock::2d` to `osx::dock::twod` for Puppet 4 compat
 * add `sip_enabled` fact for checking Rootless on 10.11
 * adjusted `osx::software_update` to run idempotently on every run
+* add `osx::mouse::force_touch` for controlling force_touch
 
 ## Usage
 
