@@ -1,6 +1,6 @@
 {
   "name": "halyard-osx",
-  "version": "2.8.12",
+  "version": "2.8.13",
   "author": "Les Aker",
   "license": "MIT",
   "summary": "Configure OSX via Boxen",
