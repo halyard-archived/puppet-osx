@@ -2,7 +2,6 @@ puppet-osx
 ===========
 
 [![Puppet Forge](https://img.shields.io/puppetforge/v/halyard/osx.svg)](https://forge.puppetlabs.com/halyard/osx)
-[![Dependency Status](https://img.shields.io/gemnasium/halyard/puppet-osx.svg)](https://gemnasium.com/halyard/puppet-osx)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://tldrlegal.com/license/mit-license)
 [![Build Status](https://img.shields.io/circleci/project/halyard/puppet-osx/master.svg)](https://circleci.com/gh/halyard/puppet-osx)
 
